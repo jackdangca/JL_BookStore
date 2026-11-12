@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-slate-100 text-slate-800;
+  }
+  ::selection {
+    @apply bg-brand-500/20;
+  }
+}
+
+@layer components {
+  /* ---- Form primitives ---- */
+  .label {
+    @apply block text-[13px] font-semibold text-slate-700 mb-1.5;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800
+      placeholder:text-slate-400 shadow-sm transition
+      focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/15
+      disabled:bg-slate-50 disabled:text-slate-400;
+  }
+  select.input {
+    @apply pr-9 appearance-none bg-no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+  }
+  .hint {
+    @apply text-[13px] leading-relaxed text-slate-500;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold
+      transition-all duration-150 select-none cursor-pointer
+      focus:outline-none focus-visible:ring-4 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700 hover:shadow-md
+      active:translate-y-px focus-visible:ring-brand-500/30;
+  }
+  .btn-ghost {
+    @apply btn bg-white text-slate-600 border border-slate-300 shadow-sm
+      hover:bg-slate-50 hover:text-slate-800 active:translate-y-px focus-visible:ring-slate-400/25;
+  }
+
+  /* ---- Surfaces ---- */
+  .card {
+    @apply rounded-2xl border border-slate-200/80 bg-white shadow-card;
+  }
+  .card-pad {
+    @apply p-6 sm:p-7;
+  }
+
+  /* ---- Table primitives ---- */
+  .table-base {
+    @apply w-full text-sm border-collapse;
+  }
+  .th {
+    @apply px-4 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-slate-500
+      bg-slate-50 border-b border-slate-200 whitespace-nowrap;
+  }
+  .td {
+    @apply px-4 py-3 border-b border-slate-100 align-middle;
+  }
+  .row-hover {
+    @apply transition-colors hover:bg-brand-50/60 cursor-pointer;
+  }
+
+  /* ---- Badges & chips ---- */
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold leading-none;
+  }
+  .code-chip {
+    @apply rounded-md bg-brand-50 px-1.5 py-0.5 font-mono text-[12px] font-semibold text-brand-800;
+  }
+}

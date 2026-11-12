@@ -1,0 +1,16 @@
+{
+  "name": "jl-book-order-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Just Lee Book Order Application - React frontend + Express backend + Oracle 12c stored procedures",
+  "scripts": {
+    "install-all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "start": "concurrently -n server,client -c blue,green \"npm start --prefix backend\" \"npm run preview --prefix frontend\"",
+    "server": "npm run dev --prefix backend",
+    "client": "npm run dev --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
